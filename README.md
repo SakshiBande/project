@@ -18,6 +18,7 @@
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
         background-image: url(b.jpg);
+        background-size:cover;
       }
       form {
         width: 400px;
