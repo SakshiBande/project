@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="b1.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+         <div class="nav-logo border">
+         <div class="logo"></div>
+         </div>
+         <div class="nav-address border">
+            <p>Deliver to</p>
+            <div class="add-icon">
+            <i class="fa-solid fa-location-dot"></i>
+            </div>
+         </div>
+         <div class="nav-search">
+            <select>
+                <option>All</option>
+            </select>
+            <input placeholder="Search .." class="search-input">
+            <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+         </div>
+         <div class="nav-signin border">
+            <p><span>hello</span> </p>
+            <a href="login.html">sign in</a>
+            <p class="nav-second"> Account & lists</p>
+           </div>
+           <div class="nav-return border">
+            <p><span>Returns</span> </p>
+            <p class="nav-second">& Orders</p>
+           </div>
+           <div class="nav-cart">
+           <i class="fa-solid fa-cart-shopping"></i>
+           cart
+           </div>
+           </div>
+           <div class="panel">
+            <div class="panel-all">
+                <i class="fa-solid fa-bars"></i>
+                <option value="search-input"></option>
+            </div>
+            <div class="panel-ops">
+                <p>All Sports</p>
+                <p>Fitness</p>
+                <p>Muscle Support</p>
+                <p>Accessories</p>
+                <p>Clubs</p>
+            </div>
+            <div class="panel-deals">
+                Apparel
+               </div>
+           </div>
+    </header>
+    <div class="hero-section">
+    </div>
+    Home>All Sports>Nivia Warrior Basketball
+    <div class="product-details">
+        <h1>NIVIA WARRIOR BASKETBALL</h1>
+        <div class="product-box">
+            <img src="b1.webp" alt="Basketball">
+            <img src="b2.webp" alt="Basketball">
+            <img src="b3.webp" alt="Basketball">
+            <img src="b4.webp" alt="Basketball">
+        </div>
+        <div>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star-half"></i>
+            4.5 96,850 ratings
+        </div>
+        <p>₹999 <strike>₹1249</strike> 20% OFF</p>
+        <p><i class="fa-solid fa-truck-fast"></i> Free shipping on orders above ₹999</p>
+        <p><u>Return Policy</u> (Upto 7 days)</p>
+        <h2>SIZE: 7</h2>
+        <div>
+            <button onclick="updateQuantity('decrease')">-</button>
+            <input type="number" id="quantity" value="1" min="1">
+            <button onclick="updateQuantity('increase')">+</button>
+        </div>
+        <button onclick="addToCart()">Add to Cart</button>
+        <button><i class="fa-regular fa-heart"></i> Add to Wishlist</button><br>
+        <a href="p.html"><button style="background-color: orange;">BUY NOW</button></a>
+        <p>Check Estimated Delivery</p>
+        <input type="text" placeholder="Enter your pincode">
+        <p>Share: <i class="fa-brands fa-whatsapp"></i></p>
+        <h4>Description</h4>
+        <p>Introducing the Nivia Warrior Basketball—the world's first basketball featuring 
+            a patented 12-panel construction that redefines the game.This innovative design enhances control 
+            and stability, giving players an unparalleled edge on the court. Crafted with a rubberized molded 
+            finish, the Warrior is built to withstand the rigors of competitive play, offering exceptional grip
+            and durability. Suitable for hard surfaces, wooden flooring,  and indoor synthetic surfaces, it’s the
+             versatile choice for athletes of all levels.Elevate your game and embrace excellence with the
+              Nivia Warrior Basketball—where innovation meets performance!</p>
+    </div>
+    <div class="cart-popup" id="cart-popup">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: ₹0</div>
+    </div>
+    <script>
+        let cart = [];
+        let cartPopup = document.getElementById("cart-popup");
+        let cartIcon = document.getElementById("cart-icon");
+        let quantityInput = document.getElementById("quantity");
+
+        cartIcon.onclick = () => {
+            cartPopup.style.display = cartPopup.style.display === "none" || cartPopup.style.display === "" ? "block" : "none";
+        };
+
+        function updateQuantity(action) {
+            let quantity = parseInt(quantityInput.value);
+            if (action === 'increase') {
+                quantityInput.value = quantity + 1;
+            } else if (action === 'decrease' && quantity > 1) {
+                quantityInput.value = quantity - 1;
+            }
+        }
+
+        function addToCart() {
+            const product = {
+                name: "Nivia Warrior Basketball",
+                price: 999,
+                quantity: parseInt(quantityInput.value),
+                total: 999 * parseInt(quantityInput.value)
+            };
+
+            cart.push(product);
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItemsDiv = document.getElementById("cart-items");
+            const cartTotalDiv = document.getElementById("cart-total");
+            cartItemsDiv.innerHTML = '';
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.innerHTML = `${item.name} x ${item.quantity} - ₹${item.total}`;
+                cartItemsDiv.appendChild(cartItem);
+            });
+
+            let total = cart.reduce((sum, item) => sum + item.total, 0);
+            cartTotalDiv.innerHTML = `Total: ₹${total}`;
+        }
+    </script>
+</body>
+</html>
+
+    

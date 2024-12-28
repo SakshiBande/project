@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border:border-box;
+    font-size: large;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(20, 20, 20);
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-logo{
+    height: 50px;
+    width:100px;
+}
+.logo{
+    background-image: url("logo2.jpg");
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+.border:hover{
+    border: 2px solid rgb(241, 241, 241);
+}
+.address{
+    margin: left 14px;
+}
+.nav-search{
+    display: flex;
+    justify-content:space-evenly ;
+    background-color:rgb(44, 27, 46);
+    width: 620px;
+    height: 40px;
+    border-radius: 2px;
+}
+.search-select{
+    background-color:#f3f3f3 ;
+    width: 50px;
+    text-align: center;
+    border: none;
+}
+.search-input{
+    width: 100%;
+   font-size: 1rem;
+   border: none;
+}
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: darkorange;
+}
+span{
+    font-size: 0.7rem;
+}
+.nav-second{
+    font-size: 0.85rem;
+}
+.nav-cart i {
+    font-size:35px ;
+}
+.nav-cart{
+    font-size:0.85rem;
+    font-weight: 700;
+
+}
+.panel{
+    height: 40px;
+    background-color: #222;
+    display: flex;
+  color: aliceblue;
+  align-items: center;
+  justify-content:space-evenly ;
+}
+.panel-ops p {
+     display: inline;
+    margin-left: 10px;
+}
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+}
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.hero-section{
+    background-image: url(ba.jpg);
+    height: 300px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hero-msg{
+    background-color: cornsilk;
+    color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.hero-msg a{
+    color: #007185;
+}
+.shop-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly ;
+     background-color: #e2e7e6;
+}
+.box{
+  color: #007185;  
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.boxcontent{
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+         <div class="nav-logo border">
+         <div class="logo"></div>
+         </div>
+         <div class="nav-address border">
+            <p>Deliver to</p>
+            <div class="add-icon">
+            <i class="fa-solid fa-location-dot"></i>
+            </div>
+         </div>
+         <div class="nav-search">
+            <select>
+                <option>All</option>
+            </select>
+            <input placeholder="Gardening" class="search-input">
+            <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+         </div>
+         <div class="nav-signin border">
+            <p><span>hello,sign in</span> </p>
+            <p class="nav-second"> Account & lists</p>
+           </div>
+           <div class="nav-return border">
+            <p><span>Returns</span> </p>
+            <p class="nav-second">& Ord  ers</p>
+           </div>
+           <div class="nav-cart">
+           <i class="fa-solid fa-cart-shopping"></i>
+           cart
+           </div>
+           </div>
+           <div class="panel">
+            <div class="panel-all">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-ops">
+                <p>Today's Deal</p>
+                <p>Customer Service</p>
+                <p>Gift Cards</p>
+                <p>Registry</p>
+                <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+                Shop Deals 
+
+               </div>
+           </div>
+    </header>
+    <div class="hero-section">
+    </div>
+    Results
+    <div class="box">
+        <div class="boxcontent">
+            <img src="p1b.webp">
+            Air Purifier
+        </div>
+        <div class="boxcontent">
+            <img src="p2b.webp">
+            Best Seller
+        </div>
+        <div class="boxcontent">
+            <img src="p3b.webp">
+            Easy to Care
+        </div>
+        <div class="boxcontent">
+            <img src="p4b.webp">
+            XL Plants
+        </div>
+        <div class="boxcontent">
+            <img src="p5b.webp">
+            Ceramic pots
+        </div>
+    </div> 
+</body>
+</html>

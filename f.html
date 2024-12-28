@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping website with Wish List functionality">
+    <title>Shopping Website - Wish List</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wish-list-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .wish-list {
+            background-color: white;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .wish-list h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .wish-list-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wish-list-items li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wish-list-items li span {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .wish-list-items li button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+        }
+
+        .wish-list-items li button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Icon for adding to wish list */
+        .wishlist-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+
+        .wishlist-icon:hover {
+            color: #e6b800;
+        }
+
+        .add-to-wishlist {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .add-to-wishlist input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .add-to-wishlist button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .add-to-wishlist button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+
+    <!-- Font Awesome for Wish List Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Wish List Section -->
+    <div class="wish-list-container">
+        <div class="wish-list">
+            <h2>Your Wish List</h2>
+
+            <!-- List of items in the wish list -->
+            <ul class="wish-list-items" id="wishlistItems">
+                <!-- Items will be dynamically added here -->
+            </ul>
+
+            <!-- Add new item to wish list -->
+            <div class="add-to-wishlist">
+                <input type="text" id="newItem" placeholder="Enter item name...">
+                <button onclick="addToWishList()">Add to Wish List</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Wish List Functionality -->
+    <script>
+        // Function to add item to the wish list
+        function addToWishList() {
+            const itemInput = document.getElementById('newItem');
+            const itemName = itemInput.value.trim();
+
+            if (itemName === "") {
+                alert("Please enter an item name.");
+                return;
+            }
+
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <span>${itemName}</span>
+                <button onclick="removeFromWishList(this)">Remove</button>
+            `;
+
+            const wishList = document.getElementById('wishlistItems');
+            wishList.appendChild(listItem);
+
+            itemInput.value = ''; // Clear input field after adding
+        }
+
+        // Function to remove item from the wish list
+        function removeFromWishList(button) {
+            const listItem = button.parentElement;
+            listItem.remove();
+        }
+
+        // Example for adding an item with the icon
+        function addItemWithIcon(itemName) {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <i class="fas fa-heart wishlist-icon"></i>
+                <span>${itemName}</span>
+                <button onclick="removeFromWishList(this)">Remove</button>
+            `;
+            const wishList = document.getElementById('wishlistItems');
+            wishList.appendChild(listItem);
+        }
+
+        // Example usage: Add an item to wish list on page load
+        window.onload = function() {
+            addItemWithIcon('New Sneakers');
+            addItemWithIcon('Cool T-shirt');
+        };
+    </script>
+</body>
+</html>

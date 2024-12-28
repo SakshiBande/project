@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border:border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(231, 226, 226);
+    color: rgb(2, 2, 2);
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-logo{
+    height: 50px;
+    width:100px;
+}
+.logo{
+    background-image: url('logom.png');
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+.border:hover{
+    border: 2px solid rgb(241, 241, 241);
+}
+.address{
+    margin: left 14px;
+}
+.nav-search{
+    display: flex;
+    justify-content:space-evenly ;
+    background-color:rgb(237, 233, 237);
+    width: 620px;
+    height: 40px;
+    border-radius: 2px;
+}
+.search-select{
+    background-color:#f3f3f3 ;
+    width: 50px;
+    text-align: center;
+    border: none;
+}
+.search-input{
+    width: 100%;
+   font-size: 1rem;
+   border: none;
+}
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: darkorange;
+}
+span{
+    font-size: 0.7rem;
+}
+.nav-second{
+    font-size: 0.85rem;
+}
+.nav-cart i {
+    font-size:35px ;
+}
+.nav-cart{
+    font-size:0.85rem;
+    font-weight: 700;
+
+}
+.panel{
+    height: 40px;
+    background-color: #222;
+    display: flex;
+  color: aliceblue;
+  align-items: center;
+  justify-content:space-evenly ;
+}
+.panel-ops p {
+     display: inline;
+    margin-left: 10px;
+}
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+}
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.hero-section{
+    background-image: url(basketh.jpg);
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.hero-msg{
+    background-color: cornsilk;
+    color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    width: 80%;
+    margin-bottom: 25px;
+}
+.hero-msg a{
+    color: #007185;
+}
+.shop-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly ;
+     background-color: #e2e7e6;
+}
+h4{
+    color: white;
+    background-color:#ffcc00;
+    height: 22px;
+}
+.box{
+    border:2px solid rgb(237, 237, 236);
+    height: 450px;
+    width: 20%;
+    background-color: white;
+    padding: 20px 0px 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+.box-img{
+    height: 300px;
+    width: 230px;
+    background-size: cover;
+
+}
+.box-content{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#cart-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+#cart-items {
+    list-style-type: none;
+}
+
+.product-item {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-section {
+    flex: 1 1 200px;
+    padding: 10px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 8px 0;
+}
+
+footer a:hover {
+    color: #ffcc00;
+}
+.social-icons a {
+    margin-right: 10px;
+    font-size: 20px;
+}
+.social-icons a:hover {
+    color: #ffcc00;
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.newsletter button:hover {
+    background-color: #e6b800;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .newsletter input[type="email"] {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+/* Change the heart icon color when it's in the wishlist */
+.fa-heart.fa-solid {
+    color: red; /* Change the color to red when added to wishlist */
+}

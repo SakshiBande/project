@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 50%;
+            margin: 20px auto;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .message {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .date {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ec930f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ddb110;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmed!</h1>
+        <p class="message">Thank you for your purchase! Your order has been successfully placed.</p>
+        <p>We are preparing your items for shipping.</p>
+        
+        <div id="shippingDate" class="date"></div>
+        
+        <button onclick="getShippingDate()">Show Shipping Date</button>
+    </div>
+
+    <script>
+        function getShippingDate() {
+            // Get the current date
+            const currentDate = new Date();
+            
+            // Add 3 days for shipping processing time
+            currentDate.setDate(currentDate.getDate() + 3);
+
+            // Format the shipping date (e.g., December 27, 2024)
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = currentDate.toLocaleDateString('en-US', options);
+            
+            // Display the formatted shipping date
+            document.getElementById("shippingDate").textContent = "Your order will be shipped on: " + formattedDate;
+        }
+    </script>
+</body>
+</html>

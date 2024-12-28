@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border:border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(231, 226, 226);
+    color: rgb(2, 2, 2);
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-logo{
+    height: 50px;
+    width:100px;
+}
+.logo{
+    background-image: url('Nivia-Logo-.svg');
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+}
+.border:hover{
+    border: 2px solid rgb(241, 241, 241);
+}
+.address{
+    margin: left 14px;
+}
+.nav-search{
+    display: flex;
+    justify-content:space-evenly ;
+    background-color:rgb(237, 233, 237);
+    width: 620px;
+    height: 40px;
+    border-radius: 2px;
+}
+.search-select{
+    background-color:#f3f3f3 ;
+    width: 50px;
+    text-align: center;
+    border: none;
+}
+.search-input{
+    width: 100%;
+   font-size: 1rem;
+   border: none;
+}
+.search-icon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: darkorange;
+}
+span{
+    font-size: 0.7rem;
+}
+.nav-second{
+    font-size: 0.85rem;
+}
+.nav-cart i {
+    font-size:35px ;
+}
+.nav-cart{
+    font-size:0.85rem;
+    font-weight: 700;
+
+}
+.panel{
+    height: 40px;
+    background-color: #474242;
+    display: flex;
+  color: aliceblue;
+  align-items: center;
+  justify-content:space-evenly ;
+}
+.panel-ops p {
+     display: inline;
+    margin-left: 10px;
+}
+.panel-ops{
+    width: 70%;
+    font-size: 0.85rem;
+}
+.panel-deals{
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+h3{
+    color: rgb(15, 1, 1);
+    height: 20px;
+    width: 10px;
+    text-align: center;
+}
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  .product-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background-image: url();
+}
+.product-box img {
+    width: 100px;
+    height: 100px;
+}
+.product-details {
+    padding: 20px;
+    text-align: center;
+}
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.product-details p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+.product-details button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #c4810f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.product-details button:hover {
+    background-color: #45a049;
+}
+.cart-icon {
+    cursor: pointer;
+    font-size: 24px;
+}
+.cart-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+h4{
+    background-color: black;
+    color: white;
+    margin-top: 2px;
+}
